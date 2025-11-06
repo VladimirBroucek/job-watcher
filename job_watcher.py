@@ -260,6 +260,9 @@ def build_digest_html(jobs: List[Dict]) -> str:
 # --------------------------- Main --------------------------- #
 
 def main():
+    print("Loaded config from:", CONFIG_PATH)
+    print("Level keywords:", cfg.get("level_keywords"))
+    print("Skill keywords:", cfg.get("skill_keywords"))
     cfg = load_config(CONFIG_PATH)
     conn = ensure_db()
 
