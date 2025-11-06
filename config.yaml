@@ -1,0 +1,119 @@
+# ================================
+# Job Watcher Configuration (v2: level AND skill)
+# ================================
+
+notify_email: "tvoje.email@domena.com"
+from_email: "broukla987@gmail.com"   
+# fallback OR logika (empty, I'm using level+skill)
+include_keywords: []
+
+# What I dont want (must NOT contain any of them)
+exclude_keywords:
+  - "senior"
+  - "staff"
+  - "principal"
+  - "lead"
+  - "manager"
+  - "unpaid"
+  - "volunteer"
+
+# === Level (must contain at least one of them) ===
+level_keywords:
+  - "co-op"
+  - "co op"
+  - "coop"
+  - "intern"
+  - "internship"
+  - "entry level"
+  - "entry-level"
+  - "junior"
+  - "jr "
+  - "medior"
+
+# === Skill (must contain at least one of them) ===
+skill_keywords:
+  # vývoj
+  - "frontend"
+  - "react"
+  - "vue"
+  - "vue.js"
+  - "javascript"
+  - "typescript"
+  - "python"
+  - "django"
+  - "flask"
+  - "node.js"
+  - "fullstack"
+
+  # security
+  - "cyber security"
+  - "information security"
+  - "soc"
+  - "soc analyst"
+  - "security analyst"
+  - "security engineer"
+  - "siem"
+  - "splunk"
+  - "incident response"
+  - "threat analyst"
+  - "vulnerability management"
+  - "network security"
+  - "cloud security"
+  - "security operations"
+  - "blue team"
+  - "red team"
+  - "threat detection"
+  - "malware analysis"
+  - "endpoint security"
+
+# Location filters
+locations:
+  - "canada"
+  - "vancouver"
+  - "british columbia"
+  - "remote"
+  - "hybrid"
+  - "burnaby"
+  - "toronto"
+
+# ===== Providers =====
+providers:
+
+  # Job Bank (Canada) 
+  - type: rss
+    url: "https://www.jobbank.gc.ca/rssfeed/jobsearch?searchstring=developer+security&locationstring=canada"
+
+  # WorkBC (BC) 
+  - type: rss
+    url: "https://www.workbc.ca/Jobs-Careers/Find-Jobs/Jobs.aspx?search=developer+security&region=british+columbia"
+
+  # SafeWorkBC
+  - type: rss
+    url: "https://www.worksafebc.com/en/about-us/careers/rss"
+
+  # RemoteOK (remote dev/security)
+  - type: rss
+    url: "https://remoteok.com/remote-dev+security+frontend+python-jobs.rss"
+
+  # Lever API
+  - type: lever
+    url: "https://api.lever.co/v0/postings/github?mode=json"
+  - type: lever
+    url: "https://api.lever.co/v0/postings/crowdstrike?mode=json"
+  - type: lever
+    url: "https://api.lever.co/v0/postings/cloudflare?mode=json"
+
+  # Greenhouse API
+  - type: greenhouse
+    url: "https://boards-api.greenhouse.io/v1/boards/shopify/jobs?content=true"
+  - type: greenhouse
+    url: "https://boards-api.greenhouse.io/v1/boards/openai/jobs?content=true"
+  - type: greenhouse
+    url: "https://boards-api.greenhouse.io/v1/boards/okta/jobs?content=true"
+
+  # not mandatory selectors, but can help improve accuracy
+  - type: html
+    url: "https://careers.bcit.ca/"
+    item_selector: ".job-item"
+    title_selector: ".job-item__title"
+    url_selector: "a"
