@@ -8,7 +8,7 @@ from_email: "broukla987@gmail.com"
 include_keywords: []
 
 # What I dont want (must NOT contain any of them)
-exclude_keywords:
+###
   - "senior"
   - "staff"
   - "principal"
@@ -16,9 +16,11 @@ exclude_keywords:
   - "manager"
   - "unpaid"
   - "volunteer"
+###
+exclude_keywords: []
 
 # === Level (must contain at least one of them) ===
-level_keywords:
+###
   - "co-op"
   - "co op"
   - "coop"
@@ -29,10 +31,12 @@ level_keywords:
   - "junior"
   - "jr "
   - "medior"
+###
+level_keywords: []
 
 # === Skill (must contain at least one of them) ===
-skill_keywords:
-  # vývoj
+###
+# development
   - "frontend"
   - "react"
   - "vue"
@@ -65,6 +69,8 @@ skill_keywords:
   - "threat detection"
   - "malware analysis"
   - "endpoint security"
+###
+skill_keywords: []
 
 # Location filters
 locations:
